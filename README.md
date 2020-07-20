@@ -1,2 +1,2 @@
 # managerTest
-testing to create a management tool
+a management tool with 

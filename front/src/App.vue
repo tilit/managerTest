@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <div class="row">
       <div class="col form-inline">
         <input type="text" v-model="newTask" placeholder="Enter Task" @keyup.enter="add" />
@@ -93,13 +93,16 @@ export default class App extends Vue {
 #kanban {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;  
-
   > div {
     display: flex;
     flex-direction: column;
-    > div {
+    .kanban-column {
       flex-basis: 0;
       flex-grow: 1;
+      display: grid;
+      grid-template-columns: auto;
+      grid-gap: 15px;
+      padding: 10px;
     }
   }
 }
@@ -114,5 +117,9 @@ export default class App extends Vue {
 }
 .done {
   background-color: green;
+}
+.list-group-item {
+  border-radius: 5px;
+  border: 5px solid rgba(0, 0, 0, 0.5)
 }
 </style>
